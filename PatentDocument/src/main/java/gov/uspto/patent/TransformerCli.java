@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
+import java.lang.Exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -213,7 +214,9 @@ public class TransformerCli {
 					LOGGER.error("Patent Reader error: ", e1);
 				} catch (IOException e) {
 					LOGGER.error("Writer error: ", e);
-				}
+				} catch (Exception base_exception) {
+                    LOGGER.error("Unspecified exception: ", base_exception);
+                }
 			}
 
 		} finally {
